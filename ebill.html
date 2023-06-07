@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>E Bill</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.whole{
+			padding: 10vw;
+			display: flex;
+			justify-content: center;
+			background: yellowgreen;
+		}
+		.menu{
+			width: 20vw;
+			padding:5vw;
+			background: wheat;
+			display: block;
+			justify-content: center;
+			border-radius: 30px;
+			border: 5px solid fuchsia;
+			height:23vw;
+		}
+		#input{
+			width:18vw;
+			height:3vw;
+			border-radius: 10px;
+			font-family: sans-serif;
+			font-size: 1.5vw;
+			font-weight: 600;
+			padding: 1vw 1vw;
+		}
+		#button{
+			padding:1vw;
+			font-size: 2vw;
+			font-family: sans-serif;
+			margin: 3vw;
+			font-weight: 700;
+			border-radius: 15px;
+			transition: all 0.3s linear;
+			border: 3px solid black;
+			background:blue;
+			color: white;
+			cursor: pointer;
+		}
+		#button:hover{
+			background:darkred;
+			color:white;
+		}
+		h1{
+			margin-left: -30vw;
+			margin-right: 5vw;
+			margin-top: 10vw;
+		}
+		#result{
+			font-size: 1.5vw;
+			font-family: sans-serif;
+			font-weight: 700;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		alert("This calculator can calculate the household electricity bill.");
+	</script>
+<div class="whole">
+	<h1>Electricity Bill Calculator</h1>
+	<form class="menu">
+	<h2 class="unit-written">Enter your units:</h2>
+	<input type="number" id="input" required><br>
+	<input type="button" value="Calculate" id="button" onclick="myfun()" required>
+	<p id="result"></p>
+</form>
+</div>
+<script type="text/javascript">
+	function myfun(){
+		var A=20;
+		var B=10;
+		var C=20;
+		var D=50;
+		var E=150;
+		var num=document.getElementById("input").value;
+		var min;
+		var bill;
+		var rem;
+		var result=document.getElementById("result");
+		if(num==0){
+			 result.innerHTML="Electric charge is Rs: 0";
+		}
+		else if(num<0){
+			result.innerHTML="Value can't be negative.";
+		}
+		
+	    else if(num>0&&num<=20)
+		{
+         min=30;
+         bill=min;
+         result.innerHTML="Electric charge is Rs:"+bill;
+		}
+		else if(num>21,num<=30){
+			min=50;
+			rem=num-A;
+			bill=(A*3)+(rem*6.5)+min;
+			result.innerHTML="Electric charge is Rs:"+bill;
+		}
+		else if(num>31,num<=50){
+			min=50;
+			rem=num-(A+B);
+			bill=(A*3)+(B*6.5)+(rem*8)+min;
+			result.innerHTML="Electric charge is Rs:"+bill;
+
+		}
+		else if(num>51,num<=100){
+			min=75;
+			rem=num-(A+B+C);
+			bill=(A*3)+(B*6.5)+(C*8)+(rem*9.5)+min;
+			result.innerHTML="Electric charge is Rs:"+bill;
+		}
+		else if(num>101,num<=250){
+			min=100;
+			rem=num-(A+B+C+D);
+			bill=(A*3)+(B*6.5)+(C*8)+(D*9.5)+(rem*9.5)+min;
+			result.innerHTML="Electric charge is Rs:"+bill;
+		}
+		else if(num>250){
+			min=150;
+			rem=num-(A+B+C+D+E);
+			bill=(A*3)+(B*6.5)+(C*8)+(D*9.5)+(E*9.5)+(rem*11)+min;
+			result.innerHTML="Electric charge is Rs:"+bill;
+		}
+		else{
+			result.innerHTML="Invalid input";
+		}
+	}
+</script>
+</body>
+</html>

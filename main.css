@@ -1,0 +1,390 @@
+body{
+	padding: 0;
+	margin: 0;
+	/*overflow: none hidden;*/
+	min-width: 1000px;
+}
+#preloader{
+	width: 100%;
+	height:100vh;
+	background:black url(loader.gif) no-repeat center center;
+	z-index: 100;
+	position: fixed;
+	margin:0;
+}
+.parent1{
+	background-image: url(bg3.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: whitesmoke;
+}
+header{
+	padding: 20px 0;
+	display: flex;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
+}
+header button{
+	font-family: cursive;
+	font-size: 22px;
+	font-weight: 500;
+	margin: 0 3%;
+	text-decoration: none;
+	color: white;
+	transition: all 0.1s linear;
+	background: black;
+	border: none;
+	border-bottom: 3px solid transparent;
+
+}
+header button:hover{
+	color: crimson;
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   border-bottom: 3px solid crimson;
+}
+header img{
+	margin: 0 11% 0 0;
+	height: 50px;
+	width: 150px;
+	border-radius: 5px;
+	border: 1px dotted red;
+}
+main{
+	padding-bottom: 18%;
+}
+.parent1 h1{
+	font-size: 80px;
+	font-family: cursive;
+	margin:  0 0 5% 5%;
+	letter-spacing: 2px;
+	color: crimson;
+}
+.parent1 h1 span{
+	color: white;
+}
+.parent1 h4 span{
+	color:crimson;
+}
+.parent1 h2{
+	font-size: 50px;
+	font-family: cursive;
+	margin: 0 5%;
+}
+.parent1 h4{
+	font-size: 35px;
+	font-family: sans-serif;
+	margin: 0 0 2% 5%;
+}
+.parent1 h6{
+	font-size: 30px;
+	font-family: sans-serif;
+	margin: 2% 0 0 5%;
+}
+.parent1 h2 span{
+	color: crimson;
+}
+.parent1 h3 span{
+	color: fuchsia;
+}
+.parent1 h3{
+	font-size: 25px;
+	font-family: cursive;
+	margin: 2% 5% -2% 5%;
+}
+.parent2 h3{
+	font-size: 35px;
+	font-family: cursive;
+	margin: 2% 44% 0 44%;
+	float: left;
+}
+.images{
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	
+}
+.images img{
+   width: 250px;
+   height: 250px;
+   border-radius: 10px;
+   transition: all 0.3s linear;
+	
+}
+.images img:hover{
+	transform: scale(1.05);
+}
+.images a{
+	margin: 0 2%;
+   width: 250px;
+   height: 250px;
+   border-radius: 10px;
+   transition: all 0.3s linear;
+}
+.images a:hover{
+	transform: scale(1.05);
+}
+.parent2{
+	padding-bottom: 7%;
+}
+.parent2 p{
+	font-size: 20px;
+	font-family: unset;
+	margin: 1% 5%;
+	
+
+}.parent2 .about{
+   color: crimson;
+   font-size: 20px;
+   font-family: sans-serif;
+   font-weight: 500;
+   text-align: center;
+}
+.parent2 h4{
+	color: crimson;
+	font-size: 40px;
+	font-family: cursive;
+	margin:2% 5% 0 5%;
+}
+.parent2 p a{
+	text-decoration: none;
+	color:royalblue;
+	transition: all 0.2s linear;
+}
+.parent2 p a:hover{
+	color: crimson;
+}
+.category{
+	background: black;
+	color: white;
+	padding: 1% 0 4% 0;
+}
+.category h1{
+	font-size: 40px;
+	font-family: cursive;
+	color: crimson;
+	margin:3% 31% 0 31%;
+}
+.category .category2{
+	font-size: 19px;
+	font-family: serif;
+	margin:0 44% 2% 44%;
+}
+.category .cat, .cat2{
+	display: flex;
+	justify-content: center;
+  /* overflow: hidden;*/
+}
+
+.category .cat div, .cat2 div{
+	width: 250px;
+	height:250px;
+	border-radius: 10px;
+	background: black;
+	margin:2% 5%;
+	box-shadow: -2px -2px 5px white, 2px 2px 5px white;
+	display: block;
+	transition: all 0.3s linear;
+}
+
+.category .cat div:hover{
+	background: crimson;
+	box-shadow: none;
+}
+
+/*.category .cat2 div{
+	width: 250px;
+	height:250px;
+	border-radius: 10px;
+	background: black;
+	margin:2% 7%;
+	box-shadow: -2px -2px 5px white, 2px 2px 5px white;
+	display: block;
+	transition: all 0.3s linear;
+}*/
+
+.category .cat2 div:hover{
+	background: crimson;
+	box-shadow: none;
+}
+
+.category .cat a, .cat2 a{
+	width: 250px;
+	height:250px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	border-radius: 10px;
+	text-decoration: none;
+	font-size: 22px;
+	font-family: sans-serif;
+	color: crimson;
+	transition: all 0.2s linear;
+}
+.category .cat a:hover{
+	color: white;
+}
+ .cat2 a:hover{
+	color: white;
+}
+
+.application{
+   padding-bottom: 4%;
+}
+
+.application h1{
+	text-align: center;
+	margin-bottom: 0;
+	font-size: 40px;
+	font-family: cursive;
+}
+.application img{
+	width: 400px;
+	height: 400px;
+	margin: -5% 0 0 5%;
+	float: left;
+}
+.application h2{
+	 margin: 2% 0 0 50%;
+	 font-size: 35px;
+	 font-family: cursive;
+	 color: crimson;
+}
+ .application p{
+  margin: 0 0 0 52%;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+.uses{
+	margin-top: 0;
+	text-align: center;
+	color: crimson;
+	font-size: 22px;
+}
+.query{
+	background: black;
+	color: white;
+	padding: 2% 0;
+}
+.query h1{
+	font-size: 40px;
+	font-family: cursive;
+	text-align: center;
+}
+.query p{
+	color: crimson;
+	font-size: 22px;
+	font-family: sans-serif;
+	text-align: center;
+}
+form{
+	display:block;
+  margin: 2% 34%;
+}
+form input{
+	width: 300px;
+	height: 50px;
+	border-radius: 20px;
+	margin: 3% 10%;
+	border: 2px solid crimson;
+	padding: 0 3%;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+.textarea{
+	height: 200px;
+	width: 300px;
+	border-radius: 20px;
+	margin: 3% 10%;
+	border: 2px solid crimson;
+	padding: 0 3%;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+form button{
+	width: 150px;
+	height: 45px;
+	margin: 3% 0 3% 8%;
+	cursor: pointer;
+	background: crimson;
+	font-size: 20px;
+	border-radius: 10px;
+	font-family: sans-serif;
+	color: white;
+	border: none;
+	transition: all 0.3s linear;
+}
+form button:hover{
+	background: black;
+	color: crimson;
+	box-shadow: -1px -1px 3px white, 1px 1px 3px white;
+}
+::placeholder{
+	font-size: 20px;
+	font-family: cursive;
+}
+.query h4{
+	font-size: 30px;
+	font-family: cursive;
+	margin-bottom: 0;
+	
+}
+.query a{
+	font-family: sans-serif;
+	text-decoration: none;
+	color: limegreen;
+	transition: all 0.2s linear;
+	
+}
+
+
+.query a:hover{
+	color: crimson;
+}
+
+.picon2{
+
+  float: left;
+  display: block;
+  align-items: center;
+  padding-left: 2%;
+}
+.picon2 .fa-solid{
+        	font-size: 40px;
+        	color: black;
+        	
+
+        }
+.fa-solid:hover{
+        	color: white;
+        }
+.picon2 a{
+    	margin-right: 3%;
+    	font-size: 40px;
+    }
+.picon2 .email{
+	font-size: 25px;
+    }
+.picon2 h6{
+	
+	font-size: 25px;
+	margin-bottom: 1%;
+}
+footer{
+	background: salmon;
+	padding: 1% 5%;
+	text-align: center;
+
+}
+footer p{
+	font-size: 22px;
+	font-family: cursive;
+	margin: 1% 0 3% 0;
+}
+footer a{
+	font-size: 20px;
+	margin: 0 /*43%*/;
+}

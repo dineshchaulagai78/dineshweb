@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="resistancecolorcode.css">
+	<title>Resistance Color Code Calculator</title>
+	<style type="text/css">
+		body{
+			background-image: linear-gradient(to right top, #FA36DF, #FA3661, tomato, #FF083C, #FA3660);
+			margin: 0;
+			padding:0;
+		}
+		div{
+			margin: 1% 10%;
+			padding: 1% 7%;
+			background: yellow;
+			background-image: linear-gradient(to right top, #FA36DF, #FA3661, tomato, #FF083C, #FA3660);
+			box-shadow: -5px -5px 10px black, 5px 5px 10px black;
+		}
+		h1{
+			font-size: 60px;
+			text-shadow:  -3px -3px 5px white, 3px 3px 5px white;
+
+		}
+		select{
+			margin: 4%;
+			width: 250px;
+			height: 40px;
+			font-size: 20px;
+			font-family: cursive;
+			color: crimson;
+			background: black;
+		}
+		option{
+			font-size: 22px;
+			font-family: sans-serif;
+		}
+		input{
+			width: 200px;
+			height: 30px;
+			font-size: 20px;
+			font-family: serif;
+			margin: 1% 8% 2% 0;
+			border-radius: 5px;
+			border-color: crimson;
+		}
+		.calculate{
+			width: 200px;
+			height: 40px;
+			font-size: 20px;
+			margin: 2%;
+			border-radius: 5px;
+			color: white;
+			background: blue;
+			transition: all 0.1s linear;
+		}
+		.calculate:hover{
+			color: crimson;
+			background: black;
+			border: none;
+			cursor: pointer;
+		}
+
+		label{
+			font-size: 20px;
+			font-family: cursive;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+	<h1>Resistance Color Code Calculator</h1>
+	<form>
+		<label for="bandA" style="font-size: 30px; font-family: cursive;">Band A:</label>
+		<select id="bandA" name="bandA">
+			<option value="0" style="background: black; color: white;">Black</option>
+			<option value="1" style="background: brown; color: white;">Brown</option>
+			<option value="2" style="background: red; color: white;">Red</option>
+			<option value="3" style="background: orange; color: black;">Orange</option>
+			<option value="4" style="background: yellow;">Yellow</option>
+			<option value="5" style="background: green;">Green</option>
+			<option value="6" style="background: blue; color: white;">Blue</option>
+			<option value="7" style="background: violet;">Violet</option>
+			<option value="8" style="background: gray; color: white;">Gray</option>
+			<option value="9" >White</option>
+		</select>
+
+		<label for="bandB" style="font-size: 30px; font-family: cursive;">Band B:</label>
+		<select id="bandB" name="bandB">
+			<option value="0" style="background: black; color: white;">Black</option>
+			<option value="1" style="background: brown; color: white;">Brown</option>
+			<option value="2" style="background: red; color: white;">Red</option>
+			<option value="3" style="background: orange; color: black;">Orange</option>
+			<option value="4" style="background: yellow;">Yellow</option>
+			<option value="5" style="background: green;">Green</option>
+			<option value="6" style="background: blue; color: white;">Blue</option>
+			<option value="7" style="background: violet;">Violet</option>
+			<option value="8" style="background: gray; color: white;">Gray</option>
+			<option value="9" >White</option>
+		</select><br>
+
+		<label for="bandC" style="font-size: 30px; font-family: cursive;">Band C:</label>
+		<select id="bandC" name="bandC">
+			<option value="1" style="background: black; color: white;">Black</option>
+			<option value="10" style="background: brown; color: white;">Brown</option>
+			<option value="100" style="background: red; color: white;">Red</option>
+			<option value="1000" style="background: orange; color: black;">Orange</option>
+			<option value="10000" style="background: yellow;">Yellow</option>
+			<option value="100000" style="background: green;">Green</option>
+			<option value="1000000" style="background: blue; color: white;">Blue</option>
+			<option value="10000000" style=" background: violet;">Violet</option>
+			<option value="100000000" style="background: gray; color: white;">Gray</option>
+			
+		</select>
+
+		<label for="bandD" style="font-size: 30px; font-family: cursive;">Band D:</label>
+		<select id="bandD" name="bandD">
+			<option value="1" style="background: brown; color: white;">Brown</option>
+			<option value="2" style="background: red; color: white;">Red</option>
+			<option value="3" style="background: orange; color: black;">Orange</option>
+			<option value="4" style="background: yellow;">Yellow</option>
+			<option value="5" style="background: gold;">Gold</option>
+			<option value="10" style="background: silver; color: black;">Silver</option>
+			<option value="20" style="background: none;">None</option>
+		</select><br>
+
+		<input type="button" class="calculate" value="Calculate" onclick="calculateResistance()"><br>
+		<label for="result">Resistance Value:</label>
+		<input type="text" id="result" name="result" readonly>
+		<label for="min">Minimum Value:</label>
+		<input type="text" id="min" name="result" readonly>
+		<label for="max">Maximum Value:</label>
+		<input type="text" id="max" name="result" readonly>
+	</form>
+
+	<script>
+		function calculateResistance() {
+			let bandA = document.getElementById("bandA").value;
+			let bandB = document.getElementById("bandB").value;
+            let bandC = document.getElementById("bandC").value;
+            let bandD = document.getElementById("bandD").value;
+            var num = (bandA+bandB)*bandC;
+            var toler = num/100*bandD;
+			var out = document.getElementById("result");
+			var min = document.getElementById("min");
+			var max = document.getElementById("max");
+			/*out=num*bandC+"Ω";*/
+			if(num<1000)
+			{
+				out.value=num+"Ω";
+				min.value=(num-toler)+"Ω";
+				max.value=(num+toler)+"Ω";
+
+			}
+			else if(num>=1000&&num<1000000)
+			{
+				out.value=num/1000+"KΩ";
+				min.value=(num-toler)/1000+"KΩ";
+				max.value=(num+toler)/1000+"KΩ";
+			}
+			else if(num>=1000000&&num<1000000000)
+			{
+				out.value=num/1000000+"MΩ";
+				min.value=(num-toler)/1000000+"MΩ";
+				max.value=(num+toler)/1000000+"MΩ";
+			}
+			else if(num>=1000000000&&num<1000000000000)
+			{
+				out.value=num/1000000000+"GΩ";
+				min.value=(num-toler)/1000000000+"GΩ";
+				max.value=(num+toler)/1000000000+"GΩ";
+			}
+			else
+			{
+				out.value=num/1000000000000+"TΩ";
+				min.value=(num-toler)/1000000000000+"TΩ";
+				max.value=(num+toler)/1000000000000+"TΩ";
+			}
+
+		}
+	</script>
+	</div>
+</body>
+</html>
+	
+

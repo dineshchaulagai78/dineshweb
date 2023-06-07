@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <style type="text/css">
+            body{
+                padding:0;
+                margin:0;
+                background-image: url(bg.jpg);
+                align-items: center;
+                background-image: linear-gradient(to right top, #FA36DF, #FA3661, tomato, #FF083C, #FA3660);
+            }
+            .container{
+                
+                background-image: linear-gradient(to right top, #FA36DF, #FA3661, tomato, #FF083C, #FA3660);
+                width:550px;
+                height:400px;
+                padding:1%;
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                display: block;
+                align-items: center;
+               
+                box-shadow: 3px 3px 13px black, -3px -3px 13px black;
+
+            }
+            input{
+                width:180px;
+                height:70px;
+                border-radius: 10px;
+                margin:  30px 35px;
+                font-size: 20px;
+                font-weight: 500;
+               
+               
+              
+            }
+            h1{
+                margin:20px 40px;
+                font-family: monospace;
+                font-weight: 700;
+                font-size: 35px;
+                text-shadow: 2px 2px 5px white;
+            }
+            ::placeholder{
+                font-size: 20px;
+                font-weight: 400;
+                font-family: inherit;
+            }
+            p{
+                color: red;
+                font-family: serif;
+                font-weight: 400;
+                font-size: 20px;
+            }
+            /*#btn{
+                width:180px;
+                height: 60px;
+                border-radius: 20px;
+                background: blue;
+                color: white;
+                font-family: sans-serif;
+                font-weight: 500;
+                font-size: 25px;
+                margin: 0 165px;
+                cursor: pointer;
+            }*/
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Decimal-Binary Converter</h1>
+            <input type="number" id="decimal" placeholder="Decimal">
+            <input type="number" id="binary" placeholder="Binary">
+            <input type="number" id="octal" placeholder="Octal">
+            <input type="text" id="hexadecimal" placeholder="Hexadecimal">
+            <p id="error"></p>
+        </div>
+        <script type="text/javascript">
+           
+            let decimal=document.getElementById("decimal");
+            let binary=document.getElementById("binary");
+            let octal=document.getElementById("octal");
+            let hexadecimal=document.getElementById("hexadecimal");
+            let error=document.getElementById("error");
+            hexadecimal.innerHTML="";
+            decimal.addEventListener("input", () => {
+                let decValue= parseInt(decimal.value);
+                binary.value=decValue.toString(2);
+                octal.value=decValue.toString(8);
+                 hexadecimal.value=decValue.toString(16);
+                  error.innerHTML="";
+            });
+            binary.addEventListener("input", () => {
+                let binaryValue=binary.value;
+                if(binaryValid(binaryValue)){
+                   decimal.value=parseInt(binaryValue, 2);
+                   let decValue=parseInt(decimal.value);
+                   octal.value=decValue.toString(8);
+                   hexadecimal.value=decValue.toString(16);
+                   error.innerHTML="";
+
+                }
+                else{
+                   error.innerHTML="Invalid Binary Number";
+                }
+                    function binaryValid(num){
+                    for(let i=0;i<num.length;i++){
+                        if(num[i]!="0" && num[i]!="1"){
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            });
+            octal.addEventListener("input", () => {
+                let octalValue=octal.value;
+                if(octalValid(octalValue)){
+                   decimal.value=parseInt(octalValue, 8);
+                   let decValue=parseInt(decimal.value);
+                   binary.value=decValue.toString(2);
+                   hexadecimal.value=decValue.toString(16);
+                   error.innerHTML="";
+
+                }
+                else{
+                   error.innerHTML="Invalid Octal Number";
+                }
+                function octalValid(num){
+                    for(let i=0;i<num.length;i++){
+                        if(num[i]=="8" || num[i]=="9"){
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            });
+                   hexadecimal.addEventListener("input", () => {
+                   let hexValue=hexadecimal.value;
+                   decimal.value=parseInt(hexValue, 16);
+                   let decValue=parseInt(decimal.value);
+                   binary.value=decValue.toString(2);
+                   octal.value=decValue.toString(8);
+                   error.innerHTML="";
+               
+            });
+
+
+               
+        </script>
+    </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.container{
+
+		}
+		th{
+			text-align: center;
+			padding: 5px 10px;
+		}
+		td{
+			text-align: center;
+			padding: 5px 10px;
+			cursor: pointer;
+		}
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1> Four band Colour-code resistance calculator</h1>
+	<label>Resistance:</label>
+	<input type="number" name="">
+	<label>Minimum resistance:</label>
+	<input type="number" name="">
+	<label>Maximum resistance:</label>
+	<input type="number" name="">
+	<table border="1">
+		<tr> 
+			<th>Colour</th>
+			<th>First Digit (A)</th>
+			<th>Second Digit (B)</th>
+			<th>Third Digit (B)</th>
+			<th>Fourth Digit (D)</th>
+		</tr>
+		<tr>
+			<th>Black</th>
+			<td class="dgt1">0</td>
+			<td class="dgt2">0</td>
+			<td class="dgt3">*10<sup>0</sup></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Brown</th>
+			<td class="dgt1">1</td>
+			<td class="dgt2">1</td>
+			<td class="dgt3">*10<sup>1</sup></td>
+			<td class="dgt4">1%</td>
+		</tr>
+		<tr>
+			<th>Red</th>
+			<td class="dgt1">2</td>
+			<td class="dgt2">2</td>
+			<td class="dgt3">*10<sup>2</sup></td>
+			<td class="dgt4">2%</td>
+		</tr>
+		<tr>
+			<th>Orange</th>
+			<td class="dgt1">3</td>
+			<td class="dgt2">3</td>
+			<td class="dgt3">*10<sup>3</sup></td>
+			<td class="dgt4">3%</td>
+		</tr>
+		<tr>
+			<th>Yellow</th>
+			<td class="dgt1">4</td>
+			<td class="dgt2">4</td>
+			<td class="dgt3">*10<sup>4</sup></td>
+			<td class="dgt4">4%</td>
+		</tr>
+		<tr>
+			<th>Green</th>
+			<td class="dgt1">5</td>
+			<td class="dgt2">5</td>
+			<td class="dgt3">*10<sup>5</sup></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Blue</th>
+			<td class="dgt1">6</td>
+			<td class="dgt2">6</td>
+			<td class="dgt3">*10<sup>6</sup></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Voilet</th>
+			<td class="dgt1">7</td>
+			<td class="dgt2">7</td>
+			<td class="dgt3">*10<sup>7</sup></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Gray</th>
+			<td class="dgt1">8</td>
+			<td class="dgt2">8</td>
+			<td class="dgt3">*10<sup>8</sup></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>White</th>
+			<td class="dgt1">9</td>
+			<td class="dgt2">9</td>
+			<td class="dgt3">*10<sup>9</sup></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Gold</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="dgt4">5%</td>
+		</tr>
+		<tr>
+			<th>Silver</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="dgt4">10%</td>
+		</tr>
+		<tr>
+			<th>None</th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="dgt4">20%</td>
+		</tr>
+	</table>
+</div>
+<script type="text/javascript">
+	let firstDigit=document.getElementsByClassName("dgt1");
+	let secondDigit=document.getElementsByClassName("dgt2");
+	let thirdDigit=document.getElementsByClassName("dgt3");
+	let fourthDigit=document.getElementsByClassName("dgt4");
+
+</script>
+</body>
+</html>
